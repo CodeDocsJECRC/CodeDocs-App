@@ -1,0 +1,107 @@
+{
+  "project_info": {
+    "project_number": "145335052480",
+    "firebase_url": "https://codedocs-2aa1b.firebaseio.com",
+    "project_id": "codedocs-2aa1b",
+    "storage_bucket": "codedocs-2aa1b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:145335052480:android:ed6e8e28e5c5bd2d",
+        "android_client_info": {
+          "package_name": "org.codedocs.codedocs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "145335052480-44mp4n1pb6ao2meqd71guhptrf3jim9n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.codedocs.codedocs",
+            "certificate_hash": "d75fabe1cf25a6b29af98a54a421dde58d6bfb20"
+          }
+        },
+        {
+          "client_id": "145335052480-9rlka5f7bplgoie8h5gll5vt50farm22.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "145335052480-9rlka5f7bplgoie8h5gll5vt50farm22.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_f7MZrG4JjMn77-sWaa_dzjIzL8MirAU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "145335052480-9rlka5f7bplgoie8h5gll5vt50farm22.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:145335052480:android:5ef2b4b8e6ae1b9a",
+        "android_client_info": {
+          "package_name": "org.codedocs.codedocsapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "145335052480-sb7c2big2t796bls9eeb6gf60i5hb3li.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.codedocs.codedocsapp",
+            "certificate_hash": "d75fabe1cf25a6b29af98a54a421dde58d6bfb20"
+          }
+        },
+        {
+          "client_id": "145335052480-9rlka5f7bplgoie8h5gll5vt50farm22.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "145335052480-9rlka5f7bplgoie8h5gll5vt50farm22.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_f7MZrG4JjMn77-sWaa_dzjIzL8MirAU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "145335052480-9rlka5f7bplgoie8h5gll5vt50farm22.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
