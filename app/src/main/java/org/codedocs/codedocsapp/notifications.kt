@@ -1,5 +1,6 @@
 package org.codedocs.codedocsapp
 
+import android.app.ProgressDialog
 import android.content.Context
 import android.graphics.Color
 import android.net.Uri
@@ -8,23 +9,17 @@ import android.support.v4.app.Fragment
 import android.support.v7.widget.CardView
 import android.util.Log
 import android.util.TypedValue
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.LinearLayout
-import android.widget.TextView
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.notification__layout.*
 import java.util.*
-import android.view.Gravity
-import android.widget.PopupWindow
 import kotlinx.android.synthetic.main.fragment_notifications.*
 import kotlinx.android.synthetic.main.fragment_notifications.view.*
 import kotlinx.android.synthetic.main.popup.*
 import android.content.Context.LAYOUT_INFLATER_SERVICE
 import android.graphics.drawable.ColorDrawable
 import android.support.v4.content.ContextCompat
-import android.widget.Button
+import android.view.*
+import android.widget.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -53,6 +48,7 @@ class notifications : Fragment() {
     var ncount: Int? = null
     var i: Int = 0
     var j: Int = 0
+    var prog:ProgressBar?=null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -67,6 +63,13 @@ class notifications : Fragment() {
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         mView=inflater.inflate(R.layout.fragment_notifications, container, false)
+        prog=mView!!.findViewById<ProgressBar>(R.id.nprogress)
+
+         //prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+        prog!!.setVisibility(View.VISIBLE);
+        prog!!.setProgress(30)
+        activity!!.getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
+                WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
         getnotifc()
         return mView
     }
@@ -145,6 +148,8 @@ class notifications : Fragment() {
         linearLayout!!.addView(tvDesc)
         linearLayout.setBackgroundColor(Color.parseColor("#546E7A"))
 
+
+
         cardView!!.addView(linearLayout)
         cardView!!.setOnClickListener{
             initiatePopupWindow(cardView!!,name,fdesc)
@@ -152,6 +157,11 @@ class notifications : Fragment() {
         }
 
         var ncont:LinearLayout=ncontainer
+
+        val radius=5.0
+        val padd=5.0
+        cardView!!.radius=radius.toFloat()
+        cardView!!.setPadding(5,2,5,2)
 
         ncont.addView(cardView)
         ncont.setOnClickListener{
@@ -217,6 +227,15 @@ class notifications : Fragment() {
 
             }
         }
+        prog!!.progress = 100
+        prog!!.setVisibility(View.INVISIBLE);
+
+        getActivity()!!.runOnUiThread(object:Runnable {
+            public override fun run() {
+                getActivity()!!.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+            }
+        })
+
 
 
     }
@@ -243,7 +262,7 @@ class notifications : Fragment() {
             }
             i--
         }
-
+        prog!!.progress = 50
 
     }
 

@@ -1,5 +1,6 @@
 package org.codedocs.codedocsapp
 
+import android.app.ProgressDialog
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -14,7 +15,9 @@ import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.TextView
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.firestore.*
@@ -59,6 +62,7 @@ class home : Fragment() {
     var j: Int = 0
     var nurl:String?=null
     var hurl:String?=null
+    var prog:ProgressBar?=null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -74,7 +78,12 @@ class home : Fragment() {
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         mView=inflater.inflate(R.layout.fragment_home, container, false)
-
+        prog=mView!!.findViewById<ProgressBar>(R.id.progress)
+       // prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+        prog!!.setVisibility(View.VISIBLE);
+        prog!!.setProgress(30)
+       activity!!.getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
+                WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
         gethelc()
         return mView
     }
@@ -151,6 +160,7 @@ class home : Fragment() {
 
                     }
                 }, 3000)
+                prog!!.progress = 50
 
 
             }
@@ -173,6 +183,16 @@ class home : Fragment() {
             }
             j--
         }
+        prog!!.progress=90
+        prog!!.setVisibility(View.INVISIBLE);
+
+        getActivity()!!.runOnUiThread(object:Runnable {
+                public override fun run() {
+                    getActivity()!!.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+                }
+            })
+
+
 
 
     }
