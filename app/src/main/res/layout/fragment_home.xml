@@ -53,16 +53,17 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/llhe"
                 android:orientation="vertical">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Highlights"
-                    android:textAllCaps="true"
-                    android:textSize="25dip"
-                    android:textColor="#ffff"
-                    android:textAlignment="center"
                     android:shadowColor="@color/colorPrimary"
-                    android:textStyle="bold"/>
+                    android:text="Highlights"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="#ffff"
+                    android:textSize="25dip"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -103,7 +104,8 @@
             app:cardCornerRadius="5dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:layout_marginBottom="5dp">
+            android:layout_marginBottom="5dp"
+            android:id="@+id/cvab">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

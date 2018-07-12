@@ -23,6 +23,7 @@ import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.firestore.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_home.llno
+import org.codedocs.codedocsapp.R.id.invisible
 
 import java.net.URL
 import java.util.*
@@ -84,6 +85,10 @@ class home : Fragment() {
         prog!!.setProgress(30)
        activity!!.getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
                 WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+        cvhe.visibility=View.INVISIBLE
+        cvno.visibility=View.INVISIBLE
+        cvab.visibility=View.INVISIBLE
+
         gethelc()
         return mView
     }
@@ -185,6 +190,9 @@ class home : Fragment() {
         }
         prog!!.progress=90
         prog!!.setVisibility(View.INVISIBLE);
+        cvhe.visibility=View.VISIBLE
+        cvno.visibility=View.VISIBLE
+        cvab.visibility=View.VISIBLE
 
         getActivity()!!.runOnUiThread(object:Runnable {
                 public override fun run() {
