@@ -30,12 +30,7 @@
                 android:background="@color/lbg"/>
 
         </LinearLayout>
-        <ProgressBar
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/progress"
 
-            style="?android:attr/progressBarStyleHorizontal"/>
 
         <!-- TODO: Update blank fragment layout -->
 

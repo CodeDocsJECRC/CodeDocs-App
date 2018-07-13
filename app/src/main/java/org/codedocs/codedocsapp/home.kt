@@ -63,7 +63,7 @@ class home : Fragment() {
     var j: Int = 0
     var nurl:String?=null
     var hurl:String?=null
-    var prog:ProgressBar?=null
+    var progd:ProgressDialog?=null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -79,16 +79,12 @@ class home : Fragment() {
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         mView=inflater.inflate(R.layout.fragment_home, container, false)
-        prog=mView!!.findViewById<ProgressBar>(R.id.progress)
-       // prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-        prog!!.setVisibility(View.VISIBLE);
-        prog!!.setProgress(30)
+
        activity!!.getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
                 WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-        cvhe.visibility=View.INVISIBLE
-        cvno.visibility=View.INVISIBLE
-        cvab.visibility=View.INVISIBLE
-
+        progd= ProgressDialog(context)
+        progd!!.setMessage("Loading")
+        progd!!.show()
         gethelc()
         return mView
     }
@@ -165,7 +161,7 @@ class home : Fragment() {
 
                     }
                 }, 3000)
-                prog!!.progress = 50
+
 
 
             }
@@ -188,11 +184,9 @@ class home : Fragment() {
             }
             j--
         }
-        prog!!.progress=90
-        prog!!.setVisibility(View.INVISIBLE);
-        cvhe.visibility=View.VISIBLE
-        cvno.visibility=View.VISIBLE
-        cvab.visibility=View.VISIBLE
+        
+        progd!!.dismiss()
+
 
         getActivity()!!.runOnUiThread(object:Runnable {
                 public override fun run() {

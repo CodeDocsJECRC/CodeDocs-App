@@ -48,7 +48,8 @@ class notifications : Fragment() {
     var ncount: Int? = null
     var i: Int = 0
     var j: Int = 0
-    var prog:ProgressBar?=null
+    var progd:ProgressDialog?=null
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -63,13 +64,9 @@ class notifications : Fragment() {
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         mView=inflater.inflate(R.layout.fragment_notifications, container, false)
-        prog=mView!!.findViewById<ProgressBar>(R.id.nprogress)
-
-         //prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-        prog!!.setVisibility(View.VISIBLE);
-        prog!!.setProgress(30)
-        activity!!.getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
-                WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+        progd= ProgressDialog(context)
+      progd!!.setMessage("Loading")
+        progd!!.show()
         getnotifc()
         return mView
     }
@@ -227,8 +224,7 @@ class notifications : Fragment() {
 
             }
         }
-        prog!!.progress = 100
-        prog!!.setVisibility(View.INVISIBLE);
+
 
         getActivity()!!.runOnUiThread(object:Runnable {
             public override fun run() {
@@ -262,7 +258,8 @@ class notifications : Fragment() {
             }
             i--
         }
-        prog!!.progress = 50
+        progd!!.dismiss()
+
 
     }
 
