@@ -85,6 +85,8 @@ class home : Fragment() {
         progd= ProgressDialog(context)
         progd!!.setMessage("Loading")
         progd!!.show()
+        progd!!.setCancelable(false)
+        progd!!.setCanceledOnTouchOutside(false)
         gethelc()
         return mView
     }
@@ -184,7 +186,7 @@ class home : Fragment() {
             }
             j--
         }
-        
+
         progd!!.dismiss()
 
 

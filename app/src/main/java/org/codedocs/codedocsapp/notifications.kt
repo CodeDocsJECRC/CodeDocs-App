@@ -67,6 +67,8 @@ class notifications : Fragment() {
         progd= ProgressDialog(context)
       progd!!.setMessage("Loading")
         progd!!.show()
+        progd!!.setCancelable(false)
+        progd!!.setCanceledOnTouchOutside(false)
         getnotifc()
         return mView
     }

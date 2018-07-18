@@ -7,24 +7,29 @@ import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-    val fm=supportFragmentManager
-    val ft=fm.beginTransaction()
+
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
 
             R.id.xhome -> {
+                val fm=supportFragmentManager
+                val ft=fm.beginTransaction()
                 val fragment=home()
                 ft.replace(R.id.container,fragment).addToBackStack(null).commit();
 
                 return@OnNavigationItemSelectedListener true
             }
             R.id.xnotifs -> {
+                val fm=supportFragmentManager
+                val ft=fm.beginTransaction()
                 val fragment=notifications()
                 ft.replace(R.id.container,fragment).addToBackStack(null).commit();
 
                 return@OnNavigationItemSelectedListener true
             }
             R.id.xweird -> {
+                val fm=supportFragmentManager
+                val ft=fm.beginTransaction()
 
                 return@OnNavigationItemSelectedListener true
             }
