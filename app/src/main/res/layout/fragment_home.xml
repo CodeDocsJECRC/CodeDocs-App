@@ -20,14 +20,14 @@
                 android:layout_width="300dip"
                 android:layout_height="100dip"
                 android:src="@drawable/logo"
-                android:background="@color/lbg"/>
+                android:background="@color/colorPrimary"/>
 
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="100dip"
                 android:src="@drawable/linux"
-                android:background="@color/lbg"/>
+                android:background="@color/colorPrimary"/>
 
         </LinearLayout>
 

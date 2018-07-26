@@ -3,13 +3,16 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">@color/darkbg</item>
+        <item name="colorPrimaryDark">?attr/colorPrimary</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:navigationBarColor">@color/lbg</item>
+        <item name="android:colorForeground">@color/foreground_material_light</item>
+        <item name="android:colorBackground">?attr/colorPrimary</item>
+        <item name="android:statusBarColor">?android:attr/navigationBarColor</item>
     </style>
     <style name="PopupMenu" parent="@android:style/Widget.PopupMenu">
-        <item name="android:popupBackground">@android:color/white</item>
+        <item name="android:popupBackground">#ffffff</item>
     </style>
     <style name="AppThemeLight" parent="AppTheme.Base"/>
     <style name="AppTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
@@ -20,5 +23,8 @@
     <style name="AppTheme.Base.Dark" parent="Theme.AppCompat.NoActionBar">
         <item name="cardStyle">@style/CardView.Dark</item>
     </style>
+
+
+
 
 </resources>
