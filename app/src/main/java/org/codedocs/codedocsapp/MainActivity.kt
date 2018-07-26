@@ -30,7 +30,8 @@ class MainActivity : AppCompatActivity() {
             R.id.xweird -> {
                 val fm=supportFragmentManager
                 val ft=fm.beginTransaction()
-
+                val fragment=calander()
+                ft.replace(R.id.container,fragment).addToBackStack(null).commit();
                 return@OnNavigationItemSelectedListener true
             }
         }
