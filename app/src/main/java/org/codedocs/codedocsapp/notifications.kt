@@ -212,8 +212,6 @@ class notifications : Fragment() {
         notifs.get().addOnCompleteListener { task ->
             if (task.isSuccessful) {
                 ncount = Integer.parseInt(task.result.get("count").toString())
-                Log.e("bleh2", "success")
-                Log.e("bleh", "" + ncount)
                 Timer().schedule(object : TimerTask() {
                     override fun run () {
                         i = ncount as Int
@@ -250,8 +248,7 @@ class notifications : Fragment() {
                     ndesc=task.result.get("desc").toString()
                     fdesc=task.result.get("fdesc").toString()
 
-                    Log.e("bleh5",nname)
-                    Log.e("bleh6",ndesc)
+                   
                     tvn(nname!!,ndesc!!,fdesc)
 
 

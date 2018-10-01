@@ -22,9 +22,6 @@ class fcm : FirebaseMessagingService() {
 
     notificationTitle = remoteMessage.getData().get("title");
     notificationBody = remoteMessage.getData().get("body")
-    Log.e("bleh", notificationTitle)
-    Log.e("bleh", notificationBody)
-
     sendNotification(notificationTitle!!, notificationBody!!);
 }
 
