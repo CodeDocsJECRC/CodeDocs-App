@@ -94,7 +94,7 @@ class home : Fragment() {
         fun onFragmentInteraction(uri: Uri)
     }
 
-   
+
 
 
     fun gethelc(){
