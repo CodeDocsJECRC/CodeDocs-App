@@ -117,7 +117,7 @@ class notifications : Fragment() {
     }
 
     private fun initiatePopupWindow(v: View,name: String?,desc:String?) {
-        try {Log.e("blehpop1","f1")
+        try {
             //We need to get the instance of the LayoutInflater, use the context of this activity
             val inflater = getContext()!!.getSystemService(LAYOUT_INFLATER_SERVICE) as LayoutInflater
             val customView = inflater.inflate(R.layout.popup, null)
