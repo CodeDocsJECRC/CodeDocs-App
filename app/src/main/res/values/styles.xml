@@ -7,8 +7,10 @@
         <item name="colorPrimaryDark">?attr/colorPrimary</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:navigationBarColor">@color/lbg</item>
-        <item name="android:colorForeground">@color/foreground_material_light</item>
+        <item name="android:colorForeground">#BDBDBD</item>
         <item name="android:colorBackground">?attr/colorPrimary</item>
+        <item name="android:textColorHint">#BDBDBD</item>
+        <item name="android:textColor">#ffffff</item>
         <item name="android:statusBarColor">?android:attr/navigationBarColor</item>
     </style>
     <style name="PopupMenu" parent="@android:style/Widget.PopupMenu">

@@ -24,4 +24,7 @@
     <string name="stuff_to_be_added_later">STUFF TO BE ADDED LATER</string>
     <string name="about_us">About Us</string>
     <string name="close">CLOSE</string>
+    <string name="title_activity_register">Sign in</string>
+    <string name="email_id">Email ID</string>
+    <string name="already_a_member_sing_in">Already a member? Sing in</string>
 </resources>
