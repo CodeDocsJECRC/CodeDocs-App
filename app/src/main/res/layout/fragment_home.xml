@@ -53,11 +53,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:shadowColor="@color/colorPrimary"
-                    android:text="Highlights"
+                    android:text="@string/highlights"
                     android:textAlignment="center"
                     android:textAllCaps="true"
                     android:textColor="#ffff"
-                    android:textSize="25dip"
+                    android:textSize="25sp"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -81,7 +81,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="STUFF TO BE ADDED LATER"
+                    android:text="@string/stuff_to_be_added_later"
                     android:textAllCaps="true"
                     android:textStyle="bold"
                     android:textSize="25dip"
@@ -109,7 +109,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="About Us"
+                    android:text="@string/about_us"
                     android:textStyle="bold"
                     android:textColor="#ffff"
                     android:textAlignment="center"

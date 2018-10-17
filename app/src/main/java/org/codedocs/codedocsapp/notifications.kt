@@ -52,13 +52,7 @@ class notifications : Fragment() {
 
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -73,61 +67,14 @@ class notifications : Fragment() {
         return mView
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    fun onButtonPressed(uri: Uri) {
-        listener?.onFragmentInteraction(uri)
-    }
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        if (context is OnFragmentInteractionListener) {
-            listener = context
-        } else {
 
-        }
-    }
-
-    override fun onDetach() {
-        super.onDetach()
-
-        listener = null
-    }
-
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     *
-     *
-     * See the Android Training lesson [Communicating with Other Fragments]
-     * (http://developer.android.com/training/basics/fragments/communicating.html)
-     * for more information.
-     */
     interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         fun onFragmentInteraction(uri: Uri)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment notifications.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-                notifications().apply {
-                    arguments = Bundle().apply {
-                        putString(ARG_PARAM1, param1)
-                        putString(ARG_PARAM2, param2)
-                    }
-                }
-    }
+
 
 
 
@@ -170,7 +117,7 @@ class notifications : Fragment() {
     }
 
     private fun initiatePopupWindow(v: View,name: String?,desc:String?) {
-        try {Log.e("blehpop1","f1")
+        try {
             //We need to get the instance of the LayoutInflater, use the context of this activity
             val inflater = getContext()!!.getSystemService(LAYOUT_INFLATER_SERVICE) as LayoutInflater
             val customView = inflater.inflate(R.layout.popup, null)
@@ -212,8 +159,6 @@ class notifications : Fragment() {
         notifs.get().addOnCompleteListener { task ->
             if (task.isSuccessful) {
                 ncount = Integer.parseInt(task.result.get("count").toString())
-                Log.e("bleh2", "success")
-                Log.e("bleh", "" + ncount)
                 Timer().schedule(object : TimerTask() {
                     override fun run () {
                         i = ncount as Int
@@ -250,8 +195,7 @@ class notifications : Fragment() {
                     ndesc=task.result.get("desc").toString()
                     fdesc=task.result.get("fdesc").toString()
 
-                    Log.e("bleh5",nname)
-                    Log.e("bleh6",ndesc)
+
                     tvn(nname!!,ndesc!!,fdesc)
 
 
