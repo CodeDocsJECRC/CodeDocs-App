@@ -27,4 +27,10 @@
     <string name="title_activity_register">Sign in</string>
     <string name="email_id">Email ID</string>
     <string name="already_a_member_sing_in">Already a member? Sing in</string>
+    <string name="resgister">Resgister</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="password">Password</string>
+    <string name="register_activity">Register</string>
+    <string name="login">Login</string>
+    <string name="register_click_here">Register? Click here</string>
 </resources>

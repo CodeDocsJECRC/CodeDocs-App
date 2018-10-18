@@ -3,6 +3,7 @@ package org.codedocs.codedocsapp
 
 import android.content.Intent
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
@@ -81,6 +82,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val preferences = PreferenceManager.getDefaultSharedPreferences(this)
+        val status = preferences.getBoolean("status", false)
+        if (status==false){
+            val intent = Intent(this,Login::class.java)
+            startActivity(intent)
+        }
         val fm=supportFragmentManager
         val ft=fm.beginTransaction()
         val fragment=home()
